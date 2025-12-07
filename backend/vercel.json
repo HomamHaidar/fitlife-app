@@ -10,7 +10,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://YOUR_PROJECT_NAME.vercel.app",
+        "APP_URL": "fitlife-g1r7qzym0-homamhaidars-projects.vercel.app",
         "CACHE_DRIVER": "array",
         "SESSION_DRIVER": "cookie",
         "LOG_CHANNEL": "stderr"
