@@ -6,7 +6,9 @@ use App\Http\Controllers\Auth\SocialAuthController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+Route::get('/testapi', function () {
+    return 'API is working';
+});
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
