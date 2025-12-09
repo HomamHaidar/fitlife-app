@@ -2,7 +2,7 @@
     "version": 2,
     "framework": null,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.7.4" }
+        "vercel/index.php": { "runtime": "vercel-php@0.7.4" }
     },
     "routes": [
         {
@@ -18,7 +18,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://fitlife-app-ivory.vercel.app/",
+        "APP_URL": "https://${VERCEL_PROJECT_PRODUCTION_URL}",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
@@ -30,11 +30,3 @@
         "LOG_CHANNEL": "stderr"
     }
 }
-
-
-
-
-
-
-
-
