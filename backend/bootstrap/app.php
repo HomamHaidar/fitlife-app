@@ -15,6 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'verified.api' => \App\Http\Middleware\EnsureEmailIsVerifiedApi::class,
         ]);
+        $middleware->trustProxies(at: '*');$middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
