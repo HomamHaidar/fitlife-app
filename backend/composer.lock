@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74585cfeeb1eeaee2104f52f757b8811",
+    "content-hash": "5db478c0aba9d332d5288323b97e412e",
     "packages": [
         {
             "name": "brick/math",
@@ -641,6 +641,181 @@
                 }
             ],
             "time": "2023-10-12T05:21:21+00:00"
+        },
+        {
+            "name": "google/apiclient",
+            "version": "v2.18.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-api-php-client.git",
+                "reference": "5b51fdb2cbd2a96088e3dfc6f565bdf6fb0af94b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/5b51fdb2cbd2a96088e3dfc6f565bdf6fb0af94b",
+                "reference": "5b51fdb2cbd2a96088e3dfc6f565bdf6fb0af94b",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "^6.0",
+                "google/apiclient-services": "~0.350",
+                "google/auth": "^1.37",
+                "guzzlehttp/guzzle": "^7.4.5",
+                "guzzlehttp/psr7": "^2.6",
+                "monolog/monolog": "^2.9||^3.0",
+                "php": "^8.1",
+                "phpseclib/phpseclib": "^3.0.36"
+            },
+            "require-dev": {
+                "cache/filesystem-adapter": "^1.1",
+                "composer/composer": "^1.10.23",
+                "phpcompatibility/php-compatibility": "^9.2",
+                "phpspec/prophecy-phpunit": "^2.1",
+                "phpunit/phpunit": "^9.6",
+                "squizlabs/php_codesniffer": "^3.8",
+                "symfony/css-selector": "~2.1",
+                "symfony/dom-crawler": "~2.1"
+            },
+            "suggest": {
+                "cache/filesystem-adapter": "For caching certs and tokens (using Google\\Client::setCache)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/aliases.php"
+                ],
+                "psr-4": {
+                    "Google\\": "src/"
+                },
+                "classmap": [
+                    "src/aliases.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "support": {
+                "issues": "https://github.com/googleapis/google-api-php-client/issues",
+                "source": "https://github.com/googleapis/google-api-php-client/tree/v2.18.4"
+            },
+            "time": "2025-09-30T04:23:07+00:00"
+        },
+        {
+            "name": "google/apiclient-services",
+            "version": "v0.423.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-api-php-client-services.git",
+                "reference": "c8f2e8a92e2848987db421175eaaf7602ef30c33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/c8f2e8a92e2848987db421175eaaf7602ef30c33",
+                "reference": "c8f2e8a92e2848987db421175eaaf7602ef30c33",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ],
+                "psr-4": {
+                    "Google\\Service\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "support": {
+                "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.423.0"
+            },
+            "time": "2025-12-08T01:10:26+00:00"
+        },
+        {
+            "name": "google/auth",
+            "version": "v1.49.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-auth-library-php.git",
+                "reference": "68e3d88cb59a49f713e3db25d4f6bb3cc0b70764"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/68e3d88cb59a49f713e3db25d4f6bb3cc0b70764",
+                "reference": "68e3d88cb59a49f713e3db25d4f6bb3cc0b70764",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "^6.0",
+                "guzzlehttp/guzzle": "^7.4.5",
+                "guzzlehttp/psr7": "^2.4.5",
+                "php": "^8.1",
+                "psr/cache": "^2.0||^3.0",
+                "psr/http-message": "^1.1||^2.0",
+                "psr/log": "^3.0"
+            },
+            "require-dev": {
+                "guzzlehttp/promises": "^2.0",
+                "kelvinmo/simplejwt": "0.7.1",
+                "phpseclib/phpseclib": "^3.0.35",
+                "phpspec/prophecy-phpunit": "^2.1",
+                "phpunit/phpunit": "^9.6",
+                "sebastian/comparator": ">=1.2.3",
+                "squizlabs/php_codesniffer": "^4.0",
+                "symfony/filesystem": "^6.3||^7.3",
+                "symfony/process": "^6.0||^7.0",
+                "webmozart/assert": "^1.11"
+            },
+            "suggest": {
+                "phpseclib/phpseclib": "May be used in place of OpenSSL for signing strings or for token management. Please require version ^2."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Google\\Auth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Google Auth Library for PHP",
+            "homepage": "https://github.com/google/google-auth-library-php",
+            "keywords": [
+                "Authentication",
+                "google",
+                "oauth2"
+            ],
+            "support": {
+                "docs": "https://cloud.google.com/php/docs/reference/auth/latest",
+                "issues": "https://github.com/googleapis/google-auth-library-php/issues",
+                "source": "https://github.com/googleapis/google-auth-library-php/tree/v1.49.0"
+            },
+            "time": "2025-11-06T21:27:55+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -1518,78 +1693,6 @@
             "time": "2025-10-09T13:42:30+00:00"
         },
         {
-            "name": "laravel/socialite",
-            "version": "v5.23.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/socialite.git",
-                "reference": "41e65d53762d33d617bf0253330d672cb95e624b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/41e65d53762d33d617bf0253330d672cb95e624b",
-                "reference": "41e65d53762d33d617bf0253330d672cb95e624b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "firebase/php-jwt": "^6.4",
-                "guzzlehttp/guzzle": "^6.0|^7.0",
-                "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
-                "illuminate/http": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
-                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
-                "league/oauth1-client": "^1.11",
-                "php": "^7.2|^8.0",
-                "phpseclib/phpseclib": "^3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^4.18|^5.20|^6.47|^7.55|^8.36|^9.15|^10.8",
-                "phpstan/phpstan": "^1.12.23",
-                "phpunit/phpunit": "^8.0|^9.3|^10.4|^11.5|^12.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "aliases": {
-                        "Socialite": "Laravel\\Socialite\\Facades\\Socialite"
-                    },
-                    "providers": [
-                        "Laravel\\Socialite\\SocialiteServiceProvider"
-                    ]
-                },
-                "branch-alias": {
-                    "dev-master": "5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Socialite\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
-            "homepage": "https://laravel.com",
-            "keywords": [
-                "laravel",
-                "oauth"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/socialite/issues",
-                "source": "https://github.com/laravel/socialite"
-            },
-            "time": "2025-11-21T14:00:38+00:00"
-        },
-        {
             "name": "laravel/tinker",
             "version": "v2.10.1",
             "source": {
@@ -2031,82 +2134,6 @@
                 }
             ],
             "time": "2024-09-21T08:32:55+00:00"
-        },
-        {
-            "name": "league/oauth1-client",
-            "version": "v1.11.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/oauth1-client.git",
-                "reference": "f9c94b088837eb1aae1ad7c4f23eb65cc6993055"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/f9c94b088837eb1aae1ad7c4f23eb65cc6993055",
-                "reference": "f9c94b088837eb1aae1ad7c4f23eb65cc6993055",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-openssl": "*",
-                "guzzlehttp/guzzle": "^6.0|^7.0",
-                "guzzlehttp/psr7": "^1.7|^2.0",
-                "php": ">=7.1||>=8.0"
-            },
-            "require-dev": {
-                "ext-simplexml": "*",
-                "friendsofphp/php-cs-fixer": "^2.17",
-                "mockery/mockery": "^1.3.3",
-                "phpstan/phpstan": "^0.12.42",
-                "phpunit/phpunit": "^7.5||9.5"
-            },
-            "suggest": {
-                "ext-simplexml": "For decoding XML-based responses."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev",
-                    "dev-develop": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\OAuth1\\Client\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ben Corlett",
-                    "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au",
-                    "role": "Developer"
-                }
-            ],
-            "description": "OAuth 1.0 Client Library",
-            "keywords": [
-                "Authentication",
-                "SSO",
-                "authorization",
-                "bitbucket",
-                "identity",
-                "idp",
-                "oauth",
-                "oauth1",
-                "single sign on",
-                "trello",
-                "tumblr",
-                "twitter"
-            ],
-            "support": {
-                "issues": "https://github.com/thephpleague/oauth1-client/issues",
-                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.11.0"
-            },
-            "time": "2024-12-10T19:59:05+00:00"
         },
         {
             "name": "league/uri",
@@ -3102,6 +3129,55 @@
             "time": "2025-10-06T01:07:24+00:00"
         },
         {
+            "name": "psr/cache",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
+                "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/3.0.0"
+            },
+            "time": "2021-02-03T23:26:27+00:00"
+        },
+        {
             "name": "psr/clock",
             "version": "1.0.0",
             "source": {
@@ -3791,121 +3867,6 @@
             "time": "2025-09-04T20:59:21+00:00"
         },
         {
-            "name": "socialiteproviders/google",
-            "version": "4.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/Google-Plus.git",
-                "reference": "1cb8f6fb2c0dd0fc8b34e95f69865663fdf0b401"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Google-Plus/zipball/1cb8f6fb2c0dd0fc8b34e95f69865663fdf0b401",
-                "reference": "1cb8f6fb2c0dd0fc8b34e95f69865663fdf0b401",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "^7.2 || ^8.0",
-                "socialiteproviders/manager": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\Google\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "xstoop",
-                    "email": "myenglishnameisx@gmail.com"
-                }
-            ],
-            "description": "Google OAuth2 Provider for Laravel Socialite",
-            "support": {
-                "source": "https://github.com/SocialiteProviders/Google-Plus/tree/4.1.0"
-            },
-            "time": "2020-12-01T23:10:59+00:00"
-        },
-        {
-            "name": "socialiteproviders/manager",
-            "version": "v4.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/Manager.git",
-                "reference": "8180ec14bef230ec2351cff993d5d2d7ca470ef4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/8180ec14bef230ec2351cff993d5d2d7ca470ef4",
-                "reference": "8180ec14bef230ec2351cff993d5d2d7ca470ef4",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
-                "laravel/socialite": "^5.5",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.2",
-                "phpunit/phpunit": "^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "SocialiteProviders\\Manager\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\Manager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andy Wendt",
-                    "email": "andy@awendt.com"
-                },
-                {
-                    "name": "Anton Komarev",
-                    "email": "a.komarev@cybercog.su"
-                },
-                {
-                    "name": "Miguel Piedrafita",
-                    "email": "soy@miguelpiedrafita.com"
-                },
-                {
-                    "name": "atymic",
-                    "email": "atymicq@gmail.com",
-                    "homepage": "https://atymic.dev"
-                }
-            ],
-            "description": "Easily add new or override built-in providers in Laravel Socialite.",
-            "homepage": "https://socialiteproviders.com",
-            "keywords": [
-                "laravel",
-                "manager",
-                "oauth",
-                "providers",
-                "socialite"
-            ],
-            "support": {
-                "issues": "https://github.com/socialiteproviders/manager/issues",
-                "source": "https://github.com/socialiteproviders/manager"
-            },
-            "time": "2025-02-24T19:33:30+00:00"
-        },
-        {
             "name": "symfony/clock",
             "version": "v7.3.0",
             "source": {
@@ -4296,16 +4257,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v7.3.3",
+            "version": "v7.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "b7dc69e71de420ac04bc9ab830cf3ffebba48191"
+                "reference": "9dddcddff1ef974ad87b3708e4b442dc38b2261d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/b7dc69e71de420ac04bc9ab830cf3ffebba48191",
-                "reference": "b7dc69e71de420ac04bc9ab830cf3ffebba48191",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/9dddcddff1ef974ad87b3708e4b442dc38b2261d",
+                "reference": "9dddcddff1ef974ad87b3708e4b442dc38b2261d",
                 "shasum": ""
             },
             "require": {
@@ -4322,13 +4283,14 @@
             },
             "require-dev": {
                 "psr/log": "^1|^2|^3",
-                "symfony/config": "^6.4|^7.0",
-                "symfony/dependency-injection": "^6.4|^7.0",
-                "symfony/error-handler": "^6.4|^7.0",
-                "symfony/expression-language": "^6.4|^7.0",
-                "symfony/http-foundation": "^6.4|^7.0",
+                "symfony/config": "^6.4|^7.0|^8.0",
+                "symfony/dependency-injection": "^6.4|^7.0|^8.0",
+                "symfony/error-handler": "^6.4|^7.0|^8.0",
+                "symfony/expression-language": "^6.4|^7.0|^8.0",
+                "symfony/framework-bundle": "^6.4|^7.0|^8.0",
+                "symfony/http-foundation": "^6.4|^7.0|^8.0",
                 "symfony/service-contracts": "^2.5|^3",
-                "symfony/stopwatch": "^6.4|^7.0"
+                "symfony/stopwatch": "^6.4|^7.0|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -4356,7 +4318,7 @@
             "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/event-dispatcher/tree/v7.3.3"
+                "source": "https://github.com/symfony/event-dispatcher/tree/v7.4.0"
             },
             "funding": [
                 {
@@ -4376,7 +4338,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-13T11:49:31+00:00"
+            "time": "2025-10-28T09:38:46+00:00"
         },
         {
             "name": "symfony/event-dispatcher-contracts",
@@ -4524,23 +4486,22 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v7.3.7",
+            "version": "v7.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "db488a62f98f7a81d5746f05eea63a74e55bb7c4"
+                "reference": "bd1af1e425811d6f077db240c3a588bdb405cd27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/db488a62f98f7a81d5746f05eea63a74e55bb7c4",
-                "reference": "db488a62f98f7a81d5746f05eea63a74e55bb7c4",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/bd1af1e425811d6f077db240c3a588bdb405cd27",
+                "reference": "bd1af1e425811d6f077db240c3a588bdb405cd27",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
-                "symfony/deprecation-contracts": "^2.5|^3.0",
-                "symfony/polyfill-mbstring": "~1.1",
-                "symfony/polyfill-php83": "^1.27"
+                "symfony/deprecation-contracts": "^2.5|^3",
+                "symfony/polyfill-mbstring": "^1.1"
             },
             "conflict": {
                 "doctrine/dbal": "<3.6",
@@ -4549,13 +4510,13 @@
             "require-dev": {
                 "doctrine/dbal": "^3.6|^4",
                 "predis/predis": "^1.1|^2.0",
-                "symfony/cache": "^6.4.12|^7.1.5",
-                "symfony/clock": "^6.4|^7.0",
-                "symfony/dependency-injection": "^6.4|^7.0",
-                "symfony/expression-language": "^6.4|^7.0",
-                "symfony/http-kernel": "^6.4|^7.0",
-                "symfony/mime": "^6.4|^7.0",
-                "symfony/rate-limiter": "^6.4|^7.0"
+                "symfony/cache": "^6.4.12|^7.1.5|^8.0",
+                "symfony/clock": "^6.4|^7.0|^8.0",
+                "symfony/dependency-injection": "^6.4|^7.0|^8.0",
+                "symfony/expression-language": "^6.4|^7.0|^8.0",
+                "symfony/http-kernel": "^6.4|^7.0|^8.0",
+                "symfony/mime": "^6.4|^7.0|^8.0",
+                "symfony/rate-limiter": "^6.4|^7.0|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -4583,7 +4544,7 @@
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-foundation/tree/v7.3.7"
+                "source": "https://github.com/symfony/http-foundation/tree/v7.4.1"
             },
             "funding": [
                 {
@@ -4603,7 +4564,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-11-08T16:41:12+00:00"
+            "time": "2025-12-07T11:13:10+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -4809,20 +4770,21 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v7.3.4",
+            "version": "v7.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "b1b828f69cbaf887fa835a091869e55df91d0e35"
+                "reference": "bdb02729471be5d047a3ac4a69068748f1a6be7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/b1b828f69cbaf887fa835a091869e55df91d0e35",
-                "reference": "b1b828f69cbaf887fa835a091869e55df91d0e35",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/bdb02729471be5d047a3ac4a69068748f1a6be7a",
+                "reference": "bdb02729471be5d047a3ac4a69068748f1a6be7a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
+                "symfony/deprecation-contracts": "^2.5|^3",
                 "symfony/polyfill-intl-idn": "^1.10",
                 "symfony/polyfill-mbstring": "^1.0"
             },
@@ -4837,11 +4799,11 @@
                 "egulias/email-validator": "^2.1.10|^3.1|^4",
                 "league/html-to-markdown": "^5.0",
                 "phpdocumentor/reflection-docblock": "^3.0|^4.0|^5.0",
-                "symfony/dependency-injection": "^6.4|^7.0",
-                "symfony/process": "^6.4|^7.0",
-                "symfony/property-access": "^6.4|^7.0",
-                "symfony/property-info": "^6.4|^7.0",
-                "symfony/serializer": "^6.4.3|^7.0.3"
+                "symfony/dependency-injection": "^6.4|^7.0|^8.0",
+                "symfony/process": "^6.4|^7.0|^8.0",
+                "symfony/property-access": "^6.4|^7.0|^8.0",
+                "symfony/property-info": "^6.4|^7.0|^8.0",
+                "symfony/serializer": "^6.4.3|^7.0.3|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -4873,7 +4835,7 @@
                 "mime-type"
             ],
             "support": {
-                "source": "https://github.com/symfony/mime/tree/v7.3.4"
+                "source": "https://github.com/symfony/mime/tree/v7.4.0"
             },
             "funding": [
                 {
@@ -4893,7 +4855,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-16T08:38:17+00:00"
+            "time": "2025-11-16T10:14:42+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
