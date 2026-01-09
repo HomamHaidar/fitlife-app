@@ -5,15 +5,17 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
 
-    public function register(RegisterRequest  $request)
+    public function register(RegisterRequest  $request): JsonResponse
     {
         $data = $request->validated();
 
@@ -32,13 +34,13 @@ class AuthController extends Controller
         return response()->json([
             'status'  => true,
             'message' => 'User registered successfully. Please verify your email.',
-            'user'    => $user,
+            'data'    => new UserResource($user),
             'token'   => $token,
         ], 201);
     }
 
 
-    public function login(LoginRequest  $request)
+    public function login(LoginRequest  $request): JsonResponse
     {
         $data = $request->validated();
 
@@ -56,11 +58,11 @@ class AuthController extends Controller
             'status' => true,
             'message' => 'Login successful',
             'token' => $token,
-            'user'  => $user
+            'data'    => new UserResource($user),
         ]);
     }
 
-    public function logout(Request $request)
+    public function logout(Request $request): JsonResponse
     {
         $request->user()->currentAccessToken()->delete();
 
