@@ -22,6 +22,10 @@ class ExerciseResource extends JsonResource
             'difficulty'    => $this->difficulty,
             'image_url'     => $this->image_url,
             'instructions'  => $this->instructions,
+            'is_favorite'   => $this->when(
+                auth()->check(),
+                fn() => auth()->user()->favorites()->where('exercise_id', $this->id)->exists()
+            ),
         ];
     }
 }
