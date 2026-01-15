@@ -59,10 +59,8 @@ return [
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA') ?:
-                    (file_exists('/var/task/backend/storage/cacert.pem')
-                        ? '/var/task/backend/storage/cacert.pem'
-                        : base_path('storage/cacert.pem')),
+                PDO::MYSQL_ATTR_SSL_CA => env('DB_SSL_CA') ? base_path(env('DB_SSL_CA')) : null,
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
             ]) : [],
         ],
 
