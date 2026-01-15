@@ -12,7 +12,10 @@ class ExerciseController extends Controller
 {
     public function index(Request $request): AnonymousResourceCollection
     {
-        $query = Exercise::query();
+        $query = Exercise::query()->when(
+            auth()->check(),
+            fn($q) => $q->with(['favoritedBy' => fn($q) => $q->where('user_id', auth()->id())])
+        );
 
 
         if ($request->has('muscle')) {

@@ -12,8 +12,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/testapi', function () {
     return 'API is working';
 });
-Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register'])
+    ->name('register')
+    ->middleware('throttle:5,60');
+
+Route::post('/login', [AuthController::class, 'login'])
+    ->name('login')
+    ->middleware('throttle:5,60');
 
 Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
     ->middleware('signed')
