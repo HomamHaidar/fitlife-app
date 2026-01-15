@@ -47,4 +47,10 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+    public function favorites()
+    {
+
+        return $this->belongsToMany(Exercise::class, 'exercise_user')->withTimestamps();
+    }
+
 }
