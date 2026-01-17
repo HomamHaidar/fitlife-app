@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Responses\ApiResponse;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,17 +19,11 @@ class EnsureEmailIsVerifiedApi
         $user = $request->user();
 
         if (! $user) {
-            return response()->json([
-                'status' => false,
-                'message' => 'Unauthenticated.'
-            ], 401);
+            return ApiResponse::error('Unauthenticated.', 401);
         }
 
         if (! $user->hasVerifiedEmail()) {
-            return response()->json([
-                'status' => false,
-                'message' => 'Email not verified.'
-            ], 403);
+            return ApiResponse::error('Email not verified.', 403);
         }
 
         return $next($request);
