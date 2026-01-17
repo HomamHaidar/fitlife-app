@@ -15,15 +15,10 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('target_muscle')->default('General');
-
-
-            $table->string('equipment')->nullable();
-            $table->string('difficulty')->default('Beginner');
-
-
+            $table->string('target_muscle')->default('General')->index();
+            $table->string('equipment')->nullable()->index();
+            $table->string('difficulty')->default('Beginner')->index();
             $table->text('instructions')->nullable();
-
             $table->string('image_url')->nullable();
             $table->timestamps();
         });

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
+use App\Http\Responses\ApiResponse;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
@@ -25,18 +26,13 @@ class AuthController extends Controller
             'password' =>  Hash::make($data['password']),
         ]);
 
-
         event(new Registered($user));
-
         $token = $user->createToken($data['device_name'] ?? 'device-'.now()->timestamp)->plainTextToken;
 
-
-        return response()->json([
-            'status'  => true,
-            'message' => 'User registered successfully. Please verify your email.',
-            'data'    => new UserResource($user),
-            'token'   => $token,
-        ], 201);
+        return ApiResponse::success([
+            'user' => new UserResource($user),
+            'token' => $token
+        ], 'User registered successfully', 201);
     }
 
 
@@ -47,28 +43,20 @@ class AuthController extends Controller
         $user = User::where('email', $data['email'])->first();
 
         if (! $user || is_null($user->password) || ! Hash::check($request->password, $user->password)) {
-            return response()->json([
-                'status' => false,
-                'message' => 'Invalid email or password',
-            ], 401);
+            return ApiResponse::error('Invalid credentials', 401);
         }
 
         $token = $user->createToken($request->device_name)->plainTextToken;
-        return response()->json([
-            'status' => true,
-            'message' => 'Login successful',
-            'token' => $token,
-            'data'    => new UserResource($user),
-        ]);
+        return ApiResponse::success([
+            'user' => new UserResource($user),
+            'token' => $token
+        ], 'Login successful');
     }
 
     public function logout(Request $request): JsonResponse
     {
         $request->user()->currentAccessToken()->delete();
 
-        return response()->json([
-            'status' => true,
-            'message' => 'Logged out successfully'
-        ]);
+        return ApiResponse::success(null, 'Logged out successfully');
     }
 }
