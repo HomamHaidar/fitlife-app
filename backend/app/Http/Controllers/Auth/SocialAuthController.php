@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
+use App\Http\Responses\ApiResponse;
 use App\Models\User;
 use App\Services\GoogleAuthService;
 use Illuminate\Http\JsonResponse;
@@ -23,10 +24,7 @@ class SocialAuthController extends Controller
         $googleUser = $this->googleService->verifyToken($request->input('id_token'));
 
         if (! $googleUser) {
-            return response()->json([
-                'status'  => false,
-                'message' => 'Invalid Google Token',
-            ], 401);
+            return ApiResponse::error('Invalid Google Token', 401);
         }
 
         $user = User::firstOrCreate(
@@ -45,11 +43,9 @@ class SocialAuthController extends Controller
 
         $token = $user->createToken($request->device_name)->plainTextToken;
 
-        return response()->json([
-            'status'  => true,
-            'message' => 'Login successful',
-            'data'    => new UserResource($user),
-            'token'   => $token
-        ]);
+        return ApiResponse::success([
+            'user'  => new UserResource($user),
+            'token' => $token
+        ], 'Login successful');
     }
 }

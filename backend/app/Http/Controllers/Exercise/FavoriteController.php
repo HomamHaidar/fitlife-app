@@ -4,21 +4,24 @@ namespace App\Http\Controllers\Exercise;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ExerciseResource;
+use App\Http\Responses\ApiResponse;
 use App\Models\Exercise;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
 {
 
-    public function index(): AnonymousResourceCollection
+    public function index(): JsonResponse
     {
         $user = Auth::user();
 
 
         $favorites = $user->favorites()->get();
 
-        return ExerciseResource::collection($favorites);
+        return ApiResponse::success(
+            ExerciseResource::collection($favorites)
+        );
     }
     public function toggle(Exercise $exercise)
     {
@@ -26,11 +29,10 @@ class FavoriteController extends Controller
         $status = $user->favorites()->toggle($exercise->id);
         $isAdded = count($status['attached']) > 0;
 
-        return response()->json([
-            'message' => $isAdded ? 'Added to favorites' : 'Removed from favorites',
+        return ApiResponse::success([
             'status' => $isAdded ? 'attached' : 'detached',
             'is_favorite' => $isAdded
-        ]);
+        ], $isAdded ? 'Added to favorites' : 'Removed from favorites');
     }
 
 

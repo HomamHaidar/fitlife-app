@@ -12,36 +12,19 @@ class ExerciseController extends Controller
 {
     public function index(Request $request): AnonymousResourceCollection
     {
-        $query = Exercise::query()->when(
-            auth()->check(),
-            fn($q) => $q->with(['favoritedBy' => fn($q) => $q->where('user_id', auth()->id())])
-        );
+        $exercises = Exercise::query()
+            ->when($request->filled('search'), fn($q) => $q->search($request->search))
+            ->when($request->filled('muscle'), fn($q) => $q->forMuscle($request->muscle))
+            ->when($request->filled('equipment'), fn($q) => $q->forEquipment($request->equipment))
+            ->when($request->filled('difficulty'), fn($q) => $q->forDifficulty($request->difficulty))
+            ->withFavoriteStatus()
+            ->paginate(20);
 
-
-        if ($request->has('muscle')) {
-            $query->where('target_muscle', $request->muscle);
-        }
-
-
-        if ($request->has('equipment')) {
-            $query->where('equipment', $request->equipment);
-        }
-
-
-        if ($request->has('difficulty')) {
-            $query->where('difficulty', $request->difficulty);
-        }
-
-        return ExerciseResource::collection($query->paginate(20));
+        return ExerciseResource::collection($exercises);
     }
-    // ... inside the class, after the index function
 
     public function show(Exercise $exercise): ExerciseResource
     {
         return new ExerciseResource($exercise);
     }
-
-
-
-
 }
